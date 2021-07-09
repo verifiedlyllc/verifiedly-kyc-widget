@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Code Snippets Animation</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css'>
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="Container">
+  <nav>
+    <div class="current"></div>
+    <a href="#one" class="active">Ruby</a>
+    <a href="#two">Python</a>
+    <a href="#three">Node</a>
+    <a href="#four">Go</a>
+  </nav>
+  <div class="Contents">
+    <div class="Content" id="one">
+    <pre><code>require "stripe"
+Stripe.api_key = "..."
+
+Stripe::Charge.create(
+  :amount => 2000,
+  :currency => "eur",
+  :source => "tok_mastercard", # obtained with Stripe.js
+  :description => "Charge for hello@thomascullen.io"
+)</code></pre>
+  </div>
+  <div class="Content" id="two">
+    <pre class="python"><code>import stripe
+stripe.api_key = "..."
+
+stripe.Charge.create(
+  amount=2000,
+  currency="eur",
+  source="tok_amex", # obtained with Stripe.js
+  description="Charge for madison.wilson@example.com"
+)</pre></code>
+  </div>
+  <div class="Content" id="three">
+    <pre><code>var stripe = require("stripe")(
+  "..."
+);
+
+stripe.charges.create({
+  amount: 2000,
+  currency: "eur",
+  source: "tok_visa", // obtained with Stripe.js
+  description: "Charge for jayden.martinez@example.com"
+}, function(err, charge) {
+  // asynchronously called
+});</code></pre>
+  </div>
+  <div class="Content" id="four">
+    <pre><code>stripe.Key = "..."
+
+chargeParams := &stripe.ChargeParams{
+  Amount: 2000,
+  Currency: "eur",
+  Desc: "Charge for benjamin.wilson@example.com",
+}
+
+// obtained with Stripe.js
+chargeParams.SetSource("tok_mastercard")
+ch, err := charge.New(chargeParams)</code></pre>
+  </div>
+  </div>
+</div>
+
+<div class="credit">
+  <p>The code snippets in this demo are taken from Stripe's <a href="https://stripe.com/docs/api#create_charge" target="_blank">incredible documentation</a></p>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/ruby.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js'></script>
+<script  src="./script.js"></script>
+
+</body>
+</html>

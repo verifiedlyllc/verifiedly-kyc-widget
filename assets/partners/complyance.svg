@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="493" height="150" viewBox="0 0 493 150">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 72px;
+        fill: #9c9c9c;
+        font-family: "Circular Std";
+        font-weight: 800;
+      }
+    </style>
+  </defs>
+  <text id="Complyance" class="cls-1" transform="matrix(1.146, 0, 0, 1.146, 0, 100.48)">Complyance</text>
+</svg>
