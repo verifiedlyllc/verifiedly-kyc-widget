@@ -1293,9 +1293,6 @@ else{
   }, 3000);
   
 
-
-
-
           }
 
           businessRender(){
@@ -1304,34 +1301,32 @@ else{
             kycPage2.style.display = 'none'
             const kycPage3 = this.shadowRoot.querySelector('.kyc_page4')
             kycPage3.style.display = 'flex'
-
-       
           }
 
           finishRender(){
             const kycPage3 = this.shadowRoot.querySelector('.kyc_page4')
             kycPage3.style.display = 'none'
-            const kycPage4 = this.shadowRoot.querySelector('.kyc_page5')
-          
+            const kycPage4 = this.shadowRoot.querySelector('.kyc_page5') 
             kycPage4.style.display = 'flex'
-
           }
           
-
           backToBis(){
-
-         
             const kycPage3 = this.shadowRoot.querySelector('.kyc_page4')
           
             kycPage3.style.display = 'none'
             const kycPage2 = this.shadowRoot.querySelector('.kyc_page3')
             kycPage2.style.display = 'flex'
           }
-          connectedCallback () {
 
-            this.render()
-        
-        
+          backToStart(){
+            const kycPage3 = this.shadowRoot.querySelector('.kyc_page3')
+          
+            kycPage3.style.display = 'none'
+            const kycPage2 = this.shadowRoot.querySelector('.kyc_page2')
+            kycPage2.style.display = 'flex'
+          }
+          connectedCallback () {
+            this.render()        
   
     this.shadowRoot.querySelector('.redirect_btn').addEventListener('click', () => this.showModal(true))
     this.shadowRoot.querySelector('.close_icon').addEventListener('click', () => this.showModal(false))
@@ -1340,6 +1335,9 @@ else{
     this.shadowRoot.querySelector('.verification_btn').addEventListener('click', () => this.businessRender())
     this.shadowRoot.querySelector('.business_btn').addEventListener('click', () => this.verificationRender())
     this.shadowRoot.querySelector('.back_to_business_btn').addEventListener('click', () => this.backToBis())
+    this.shadowRoot.querySelector('.back_to_start_btn').addEventListener('click', () => this.backToStart())
+
+    
     // this.shadowRoot.querySelector('.finish_btn').addEventListener('click', () => this.finishRender())
     this.shadowRoot.querySelector('.close_icon_btn').addEventListener('click', () => this.showModal(false)) 
     const customSelect =  this.shadowRoot.querySelector('.custom-select');
