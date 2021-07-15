@@ -450,14 +450,27 @@ getStartPage.innerHTML=`
 
              <div class="row">
              <div class="col-lg-12 margin-t-1">
-              <h6 class="font-s-13">Didn’t receive OTP? <a href="" class="otp_resent">Resend</a></h6>
+              <h6 class="font-s-13">Didn’t receive OTP? <a href="#" class="otp_resent">Resend</a></h6>
              </div>
              </div>
             </div>
 
             <div class="col-lg-12">
               <span class="d-flex d-md-flex flex-row justify-content-start align-items-center">
-                <i class="tio info_outined margin-t-1 "></i><p class=" font-s-12 margin-t-3 ml-1">Your information is secured and safe with us</p>
+              <svg class='margin-t-1' width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<path d="M8.67106 14.9447C12.353 14.9447 15.3377 11.9599 15.3377 8.278C15.3377 4.5961 12.353 1.61133 8.67106 1.61133C4.98916 1.61133 2.00439 4.5961 2.00439 8.278C2.00439 11.9599 4.98916 14.9447 8.67106 14.9447Z" stroke="black" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8.6709 10.9447V8.27808" stroke="black" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8.6709 5.61133H8.67757" stroke="black" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="16" height="16" fill="white" transform="translate(0.670898 0.278076)"/>
+</clipPath>
+</defs>
+</svg>
+
+              <p class=" font-s-12 margin-t-3 ml-1">Your information is secured and safe with us</p>
               </span>
             </div>
             <div class="col-12 d-md-flex justify-content-end margin-t-2">
@@ -861,6 +874,7 @@ verificationPage.innerHTML = `
   <!-- sass -->
   <script src="https://res.cloudinary.com/verifiedly/raw/upload/v1625604222/sass_otc3tz.js" type="text/javascript"></script>
 
+  <script  crossorigin="anonymous"  src="https://res.cloudinary.com/verifiedly/raw/upload/v1625849805/webcam_u5dmbv.js"></script>
 </body>
 
 </html>
@@ -1040,6 +1054,7 @@ template.innerHTML=`
 <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625605461/css/dracula.min_graxc3.css">
 <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625605465/css/reset.min_ihxu18.css">
 
+<script  crossorigin="anonymous"  src="https://res.cloudinary.com/verifiedly/raw/upload/v1625849805/webcam_u5dmbv.js"></script>
 <link rel="shortcut icon" href="https://res.cloudinary.com/verifiedly/image/upload/v1625613183/favicon_f5k5ae.png" type="image/x-icon" />
 <!-- Bootstrap 4.5 -->
 <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625605462/css/bootstrap.min_l5tfnu.css" type="text/css" />
@@ -1055,6 +1070,8 @@ template.innerHTML=`
 <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625838299/main_gma76t.css" type="text/css" />
 <!-- normalize -->
 <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625605464/css/normalize_vjmkir.css" type="text/css" />
+
+<script  crossorigin="anonymous"  src="https://res.cloudinary.com/verifiedly/raw/upload/v1625849805/webcam_u5dmbv.js"></script>
 </head>
 
 
@@ -1110,6 +1127,9 @@ Verify with Verifiedly
 </div>
   </div>
 </div>
+<div class='webcam_script'></div>
+
+
   <!-- jquery -->
   <script src="https://res.cloudinary.com/verifiedly/raw/upload/v1625605454/js/jquery-3.5.0_inc3z0.js" type="text/javascript"></script>
   <!-- jquery-migrate -->
@@ -1160,7 +1180,8 @@ Verify with Verifiedly
   <!-- sass -->
   <script src="https://res.cloudinary.com/verifiedly/raw/upload/v1625604222/sass_otc3tz.js" type="text/javascript"></script>
 
-  <script src="https://res.cloudinary.com/verifiedly/raw/upload/v1625849805/webcam_u5dmbv.js"></script>
+  <script  crossorigin="anonymous"  src="https://res.cloudinary.com/verifiedly/raw/upload/v1625849805/webcam_u5dmbv.js"></script>
+ 
 </body>
 
 <script type="text/javascript">
@@ -1209,6 +1230,7 @@ else{
 
           };
           render(){
+          
 
             const kycObjects = this.shadowRoot.querySelector(".kyc_objects")
             kycObjects.appendChild(indexPage.content.cloneNode(true));
@@ -1289,7 +1311,7 @@ else{
         },
       
       })
-    Webcam.attach('#my_camera');
+      WebCam.attach('#my_camera');
   }, 3000);
   
 
@@ -1325,6 +1347,25 @@ else{
             const kycPage2 = this.shadowRoot.querySelector('.kyc_page2')
             kycPage2.style.display = 'flex'
           }
+
+          focusEvent = (first, last)=>{
+            if(first.value.length){
+                this.shadowRoot.getElementById(last).focus()
+            }
+
+
+            alert("first")
+            
+            maxLength = otpInput.getAttribute('maxlength');
+            
+            if (otpInput.value.length > otpInput.maxLength){
+              otpInput.value = otpInput.value.slice(0, otpInput.maxLength)
+            }
+            
+            }
+        
+
+
           connectedCallback () {
             this.render()        
   
@@ -1336,8 +1377,9 @@ else{
     this.shadowRoot.querySelector('.business_btn').addEventListener('click', () => this.verificationRender())
     this.shadowRoot.querySelector('.back_to_business_btn').addEventListener('click', () => this.backToBis())
     this.shadowRoot.querySelector('.back_to_start_btn').addEventListener('click', () => this.backToStart())
+    this.shadowRoot.querySelector('#otp').addEventListener('keyup', () => this.focusEvent(first,last))
+ 
 
-    
     // this.shadowRoot.querySelector('.finish_btn').addEventListener('click', () => this.finishRender())
     this.shadowRoot.querySelector('.close_icon_btn').addEventListener('click', () => this.showModal(false)) 
     const customSelect =  this.shadowRoot.querySelector('.custom-select');
@@ -1353,18 +1395,6 @@ else{
     
     }
     
-    const focusEvent = (first, last)=>{
-    if(first.value.length){
-        this.shadowRoot.getElementById(last).focus()
-    }
-    
-    maxLength = otpInput.getAttribute('maxlength');
-    
-    if (otpInput.value.length > otpInput.maxLength){
-      otpInput.value = otpInput.value.slice(0, otpInput.maxLength)
-    }
-    
-    }
     
     
     

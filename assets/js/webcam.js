@@ -6,6 +6,8 @@
 // Copyright (c) 2012 - 2019 Joseph Huckaby
 // Licensed under the MIT License
 
+
+alert("hello this is webcamjs")
 (function(window) {
 var _userMedia;
 
