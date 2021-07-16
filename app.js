@@ -874,7 +874,7 @@ verificationPage.innerHTML = `
   <!-- sass -->
   <script src="https://res.cloudinary.com/verifiedly/raw/upload/v1625604222/sass_otc3tz.js" type="text/javascript"></script>
 
-  <script  crossorigin="anonymous"  src="https://res.cloudinary.com/verifiedly/raw/upload/v1625849805/webcam_u5dmbv.js"></script>
+
 </body>
 
 </html>
@@ -1054,7 +1054,7 @@ template.innerHTML=`
 <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625605461/css/dracula.min_graxc3.css">
 <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625605465/css/reset.min_ihxu18.css">
 
-<script  crossorigin="anonymous"  src="https://res.cloudinary.com/verifiedly/raw/upload/v1625849805/webcam_u5dmbv.js"></script>
+
 <link rel="shortcut icon" href="https://res.cloudinary.com/verifiedly/image/upload/v1625613183/favicon_f5k5ae.png" type="image/x-icon" />
 <!-- Bootstrap 4.5 -->
 <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625605462/css/bootstrap.min_l5tfnu.css" type="text/css" />
@@ -1071,7 +1071,7 @@ template.innerHTML=`
 <!-- normalize -->
 <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625605464/css/normalize_vjmkir.css" type="text/css" />
 
-<script  crossorigin="anonymous"  src="https://res.cloudinary.com/verifiedly/raw/upload/v1625849805/webcam_u5dmbv.js"></script>
+
 </head>
 
 
@@ -1180,7 +1180,7 @@ Verify with Verifiedly
   <!-- sass -->
   <script src="https://res.cloudinary.com/verifiedly/raw/upload/v1625604222/sass_otc3tz.js" type="text/javascript"></script>
 
-  <script  crossorigin="anonymous"  src="https://res.cloudinary.com/verifiedly/raw/upload/v1625849805/webcam_u5dmbv.js"></script>
+
  
 </body>
 
@@ -1231,7 +1231,35 @@ else{
           };
           render(){
           
+            const scriptLink = `https://res.cloudinary.com/verifiedly/raw/upload/v1626284212/webcam_yfcsa1.js`;
 
+            const scriptElement = document.createElement("script");
+            scriptElement.src = scriptLink;
+          
+          
+               // handle onload script element
+               scriptElement.onload = () => {
+                 alert("working")
+                Webcam.set({
+                  height: -1,
+                  width: -1,
+                  constraints: {
+                    width: 1000,
+                    height: 1000
+                  }
+                });
+          
+                this._shadowRoot.querySelector("#camera_box")
+                const cameraElement = document.createElement("div");
+                cameraElement.id = "camera_box";
+                this._shadowRoot.appendChild(cameraElement);
+          
+                Webcam.attach(cameraElement);
+                // buttonElement.innerHTML = "Click Me";
+                // buttonElement.addEventListener("click", this.renderCamera.bind(this));
+                // camera = this.shadowRoot.querySelector("#my_camera")
+                // WebCam.attach(camera);
+              };
             const kycObjects = this.shadowRoot.querySelector(".kyc_objects")
             kycObjects.appendChild(indexPage.content.cloneNode(true));
           const kycPage2 = this.shadowRoot.querySelector('.kyc_page2')
@@ -1302,19 +1330,10 @@ else{
   </div>
     `
 
-    Webcam.set({
-        height: -1,
-        width: -1,
-        constraints:{
-          width: 1000,
-          height: 1000
-        },
-      
-      })
-      WebCam.attach('#my_camera');
+  
   }, 3000);
   
-
+  
           }
 
           businessRender(){
@@ -1395,6 +1414,9 @@ else{
     
     }
     
+   
+  
+      // this._shadowRoot.appendChild(scriptElement);
     
     
     
