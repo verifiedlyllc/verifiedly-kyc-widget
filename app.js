@@ -1204,6 +1204,11 @@ const showModal = () => {
 </html>
 `
 
+const scriptLink = `https://res.cloudinary.com/verifiedly/raw/upload/v1625849805/webcam_u5dmbv.js`;
+
+const scriptElement = document.createElement("script");
+scriptElement.src = scriptLink;
+
 class VerifiedlyKYC extends HTMLElement {
 
     constructor(){
@@ -1211,7 +1216,8 @@ class VerifiedlyKYC extends HTMLElement {
         this.attachShadow({mode:"open"});
         this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-
+        this.render()        
+  
         
     }
     //shows modal when button is clicked
@@ -1229,37 +1235,13 @@ else{
 }
 
           };
+
           render(){
           
-            const scriptLink = `https://res.cloudinary.com/verifiedly/raw/upload/v1626284212/webcam_yfcsa1.js`;
-
-            const scriptElement = document.createElement("script");
-            scriptElement.src = scriptLink;
+        
           
           
-               // handle onload script element
-               scriptElement.onload = () => {
-                 alert("working")
-                Webcam.set({
-                  height: -1,
-                  width: -1,
-                  constraints: {
-                    width: 1000,
-                    height: 1000
-                  }
-                });
-          
-                this._shadowRoot.querySelector("#camera_box")
-                const cameraElement = document.createElement("div");
-                cameraElement.id = "camera_box";
-                this._shadowRoot.appendChild(cameraElement);
-          
-                Webcam.attach(cameraElement);
-                // buttonElement.innerHTML = "Click Me";
-                // buttonElement.addEventListener("click", this.renderCamera.bind(this));
-                // camera = this.shadowRoot.querySelector("#my_camera")
-                // WebCam.attach(camera);
-              };
+           
             const kycObjects = this.shadowRoot.querySelector(".kyc_objects")
             kycObjects.appendChild(indexPage.content.cloneNode(true));
           const kycPage2 = this.shadowRoot.querySelector('.kyc_page2')
@@ -1277,6 +1259,23 @@ else{
           const kycPage5 = this.shadowRoot.querySelector('.kyc_page5')
           kycPage5.appendChild(finishPage.content.cloneNode(true));
           kycPage5.style.display = 'none'
+
+
+              // handle onload script element
+              scriptElement.onload = () => {
+             
+               Webcam.set({
+                 height: -1,
+                 width: -1,
+                 constraints: {
+                   width: 1000,
+                   height: 1000
+                 }
+               });
+         
+     
+             };
+             this.shadowRoot.appendChild(scriptElement);
                     }
         
 
@@ -1296,6 +1295,7 @@ else{
 
 
           verificationRender(){
+           
      
           const kycPage3 = this.shadowRoot.querySelector('.kyc_page2')
           kycPage3.style.display = 'none'
@@ -1329,8 +1329,11 @@ else{
   
   </div>
     `
+    const cameraElement = document.createElement("div");
+    cameraElement.id = "camera_box";
+    this.shadowRoot.appendChild(cameraElement);
 
-  
+    Webcam.attach(cameraElement);
   }, 3000);
   
   
@@ -1386,8 +1389,7 @@ else{
 
 
           connectedCallback () {
-            this.render()        
-  
+        
     this.shadowRoot.querySelector('.redirect_btn').addEventListener('click', () => this.showModal(true))
     this.shadowRoot.querySelector('.close_icon').addEventListener('click', () => this.showModal(false))
     this.shadowRoot.querySelector('.border_cancel').addEventListener('click', () => this.showModal(false))
