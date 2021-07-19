@@ -1329,9 +1329,12 @@ else{
   
   </div>
     `
-    const cameraElement = document.createElement("div");
-    cameraElement.id = "camera_box";
-    this.shadowRoot.appendChild(cameraElement);
+    // const cameraElement = document.createElement("div");
+    // cameraElement.id = "camera_box";
+    // this.shadowRoot.appendChild(cameraElement);
+
+    const cameraElement = this.shadowRoot.querySelector("#my_camera")
+    // this.shadowRoot.appendChild(cameraElement);
 
     Webcam.attach(cameraElement);
   }, 3000);
