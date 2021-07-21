@@ -1,10 +1,394 @@
 
+//liveness page 
+
+const livenessPage = document.createElement('template')
+
+
+livenessPage.innerHTML =`
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Welcome to Verifiedly" />
+  <meta name="keywords"
+    content="Automate and solve your users identity verification" />
+  <meta name="author" content="Verifiedly - Automate and solve your users identity verification" />
+
+  <title>Verifiedly KYC - Liveness </title>
+  <!-- favicon -->
+
+  <link rel="stylesheet" type="text/css"  href="./assets/css/console.css">
+  <link rel="stylesheet" href="./assets/css/dracula.min.css">
+  <link rel="stylesheet" href="./assets/css/reset.min.css">
+ 
+  <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon" />
+  <!-- Bootstrap 4.5 -->
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css" type="text/css" />
+  <!-- animate -->
+  <link rel="stylesheet" href="./assets/css/animate.css" type="text/css" />
+  <!-- Swiper -->
+  <link rel="stylesheet" href="./assets/css/swiper.min.css" />
+  <!-- icons -->
+  <link rel="stylesheet" href="./assets/css/icons.css" type="text/css" />
+  <!-- aos -->
+  <link rel="stylesheet" href="./assets/css/aos.css" type="text/css" />
+  <!-- main css -->
+  <link rel="stylesheet" href="./assets/css/main.css" type="text/css" />
+  <!-- normalize -->
+  <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
+ 
+</head>
+
+<body class="bg-white  d-flex flex flex-column justify-content-center align-item-center">
+ 
+
+
+  <div class="container d-flex justify-content-center align-item-center flex-column">
+    <div class="row d-flex justify-content-center align-item-center flex-column">
+   
+      <div class="col-lg-12 mx-auto my-auto d-flex  flex-column">
+      
+          <div class="row">
+            <div class="col-lg-12">
+      
+              <h6 class="c-gray">In order to verify your identity, take a photo of yourself in a bright background and upload</h6 >
+            </div>
+          </div>
+    <div class="row">
+       <div class="col-lg-12 padding-py-1 padding-px-1">
+        <div class="">
+          <form action="" class="row">
+
+            <div class="col-lg-12 align-items-center justify-content-center text-center">
+
+              <div class="section">
+                <img src="https://res.cloudinary.com/verifiedly/image/upload/v1624489930/liveness_glkttf.svg" alt="" class="passport_holder margin-t-4 margin-b-2">
+                         
+              <div class="rounded-25 text_full margin-t-1 bg-snow padding-px-1 padding-py-1 flex text-center justify-content-center align-items-center">
+                Now, take a photo of yourself
+              </div>      
+              </div>
+              
+              
+                        </div>
+
+     
+         
+
+       
+            <div class="col-12 d-md-flex d-flex justify-content-between margin-t-2">
+              <a class="btn btn_lg_primary liveness_to_back padding-px-6 padding-py-2  bg-snow c-black rounded-12 c-white h-fit-content">
+                Back
+            </a>
+       
+              <a class="btn btn_lg_primary liveness_to_address padding-px-6 padding-py-2  bg-blue rounded-12 c-white h-fit-content">
+                Next
+              </a>
+            </div>
+          </form>
+        </div>
+       </div>
+        
+    </div>
+
+
+    <div class="row">
+        <div class="col-12 text-center padding-t-6 mx-auto margin-t-6">
+            Powered by verifiedly <img src="https://res.cloudinary.com/verifiedly/image/upload/v1624041053/verifiedly_logo_ppus4g.svg" class="img_logo" alt="verifiedly logo">
+        </div>
+    </div>
+    <div class="footer padding-py-2 padding-px-2"></div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- jquery -->
+  <script src="../../assets/js/jquery-3.5.0.js" type="text/javascript"></script>
+  <!-- jquery-migrate -->
+  <script src="../../assets/js/jquery-migrate.min.js" type="text/javascript"></script>
+  <!-- popper -->
+  <script src="../../assets/js/popper.min.js" type="text/javascript"></script>
+  <!-- bootstrap -->
+  <script src="../../assets/js/bootstrap.min.js" type="text/javascript"></script>
+  <!--
+  ============
+  vendor file
+  ============
+   -->
+  <!-- particles -->
+  <script src="./assets/js/vendor/particles.min.js" type="text/javascript"></script>
+  <!-- TweenMax -->
+  <script src="./assets/js/vendor/TweenMax.min.js" type="text/javascript"></script>
+  <!-- ScrollMagic -->
+  <script src="./assets/js/vendor/ScrollMagic.js" type="text/javascript"></script>
+  <!-- animation.gsap -->
+  <script src="./assets/js/vendor/animation.gsap.js" type="text/javascript"></script>
+  <!-- addIndicators -->
+  <script src="./assets/js/vendor/debug.addIndicators.min.js" type="text/javascript"></script>
+  <!-- Swiper js -->
+  <script src="./assets/js/vendor/swiper.min.js" type="text/javascript"></script>
+  <!-- countdown -->
+  <script src="./assets/js/vendor/countdown.js" type="text/javascript"></script>
+  <!-- simpleParallax -->
+  <script src="./assets/js/vendor/simpleParallax.min.js" type="text/javascript"></script>
+  <!-- waypoints -->
+  <script src="./assets/js/vendor/waypoints.min.js" type="text/javascript"></script>
+  <!-- counterup -->
+  <script src="./assets/js/vendor/jquery.counterup.min.js" type="text/javascript"></script>
+  <!-- charming -->
+  <script src="./assets/js/vendor/charming.min.js" type="text/javascript"></script>
+  <!-- imagesloaded -->
+  <script src="./assets/js/vendor/imagesloaded.pkgd.min.js" type="text/javascript"></script>
+  <!-- BX-Slider -->
+  <script src="./assets/js/vendor/jquery.bxslider.min.js" type="text/javascript"></script>
+  <!-- Sharer -->
+  <script src="./assets/js/vendor/sharer.js" type="text/javascript"></script>
+  <!-- sticky -->
+  <script src="./assets/js/vendor/sticky.min.js" type="text/javascript"></script>
+  <!-- Aos -->
+  <script src="./assets/js/vendor/aos.js" type="text/javascript"></script>
+  <!-- main file -->
+  <script src="./assets/js/main.js" type="text/javascript"></script>
+  <!-- sass -->
+  <script src="./assets/js/pages/sass.js" type="text/javascript"></script>
+  <script src="./snippet/highlight.min.js"></script>
+  <script src="./snippet/go.min.js"></script>
+  <script src="./snippet/javascript.min.js"></script>
+  <script src="./snippet/python.min.js"></script>
+  <script src="./snippet/ruby.min.js"></script>
+
+</body>
+
+</html>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+
+`
+
+
+//final address page of kyb and it's template
+
+const finalAddressPage = document.createElement('template')
+finalAddressPage.innerHTML =`
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Welcome to Verifiedly" />
+  <meta name="keywords"
+    content="Automate and solve your users identity verification" />
+  <meta name="author" content="Verifiedly - Automate and solve your users identity verification" />
+
+  <title>Verifiedly KYB - Address Verification </title>
+  <!-- favicon -->
+
+  <link rel="stylesheet" type="text/css"  href="./assets/css/console.css">
+  <link rel="stylesheet" href="./assets/css/dracula.min.css">
+  <link rel="stylesheet" href="./assets/css/reset.min.css">
+ 
+  <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon" />
+  <!-- Bootstrap 4.5 -->
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css" type="text/css" />
+  <!-- animate -->
+  <link rel="stylesheet" href="./assets/css/animate.css" type="text/css" />
+  <!-- Swiper -->
+  <link rel="stylesheet" href="./assets/css/swiper.min.css" />
+  <!-- icons -->
+  <link rel="stylesheet" href="./assets/css/icons.css" type="text/css" />
+  <!-- aos -->
+  <link rel="stylesheet" href="./assets/css/aos.css" type="text/css" />
+  <!-- main css -->
+  <link rel="stylesheet" href="./assets/css/main.css" type="text/css" />
+  <!-- normalize -->
+  <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
+ 
+</head>
+
+<body class="bg-white flex flex-column">
+
+  <div class="wrapper bg-white">
+
+  <div class="row d-flex justify-content-center align-item-center">
+    <div class="col-lg-12">
+      <div class="bg-white ">
+        <div class="row">
+          <div class="container">
+         <div class="row">
+             <div class="form_cc_four">
+              
+                    <h4>Provide your address</h4>
+        
+             </div>
+         </div>
+          </div>
+          </div>
+    <div class="row">
+        <div class="form_cc_four">
+            <form action="" class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="address">Street Address</label>
+                  <input id="address" type="text" class="form-control" placeholder="Number 10 ijaoye street" autocomplete="street-address">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="city">City</label>
+                  <select id="city" class="form-control custom-select">
+                    <option selected disabled>Please Select</option>
+                    <option>Benin City</option>
+                    <option>LA</option>
+                    <option>MaryLand</option>
+           
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="state">State</label>
+                  <select id="state" class="form-control custom-select">
+                    <option selected disabled aria-disabled="true">Please select state</option>
+                    <option>Edo State</option>
+                    <option>Lagos</option>
+      
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="zip">Zip Code</label>
+                  <input id="zip" type="number" autocomplete="postal-code" class="form-control" placeholder="201">
+                </div>
+              </div>
+          
+       
+           
+
+              <div class="col-12 d-md-flex d-flex justify-content-between margin-t-1">
+          
+                <a class="btn btn_lg_primary adddress_back_to_liveness  padding-px-6 padding-py-2  bg-snow c-black rounded-12 c-white h-fit-content">
+                    Back
+                </a>
+                <a class="btn btn_lg_primary address_to_finish  padding-px-6 padding-py-2  bg-blue rounded-12 c-white h-fit-content">
+                    Finish
+                </a>
+              </div>
+            </form>
+          </div>
+        
+    </div>
+
+
+    <div class="row">
+        <div class="col-12 text-center padding-t-6 mx-auto">
+            Powered by verifiedly <img src="https://res.cloudinary.com/verifiedly/image/upload/v1624041053/verifiedly_logo_ppus4g.svg" class="img_logo" alt="verifiedly logo">
+        </div>
+    </div>
+    <div class="footer padding-py-2 padding-px-2"></div>
+      </div>
+    </div>
+   
+  </div>
+
+    <!-- [id] content -->
+
+
+    <!-- Back to top with progress indicator-->
+    <div class="prgoress_indicator">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+
+
+        
+
+  <!-- jquery -->
+  <script src="../../assets/js/jquery-3.5.0.js" type="text/javascript"></script>
+  <!-- jquery-migrate -->
+  <script src="../../assets/js/jquery-migrate.min.js" type="text/javascript"></script>
+  <!-- popper -->
+  <script src="../../assets/js/popper.min.js" type="text/javascript"></script>
+  <!-- bootstrap -->
+  <script src="../../assets/js/bootstrap.min.js" type="text/javascript"></script>
+  <!--
+  ============
+  vendor file
+  ============
+   -->
+  <!-- particles -->
+  <script src="./assets/js/vendor/particles.min.js" type="text/javascript"></script>
+  <!-- TweenMax -->
+  <script src="./assets/js/vendor/TweenMax.min.js" type="text/javascript"></script>
+  <!-- ScrollMagic -->
+  <script src="./assets/js/vendor/ScrollMagic.js" type="text/javascript"></script>
+  <!-- animation.gsap -->
+  <script src="./assets/js/vendor/animation.gsap.js" type="text/javascript"></script>
+  <!-- addIndicators -->
+  <script src="./assets/js/vendor/debug.addIndicators.min.js" type="text/javascript"></script>
+  <!-- Swiper js -->
+  <script src="./assets/js/vendor/swiper.min.js" type="text/javascript"></script>
+  <!-- countdown -->
+  <script src="./assets/js/vendor/countdown.js" type="text/javascript"></script>
+  <!-- simpleParallax -->
+  <script src="./assets/js/vendor/simpleParallax.min.js" type="text/javascript"></script>
+  <!-- waypoints -->
+  <script src="./assets/js/vendor/waypoints.min.js" type="text/javascript"></script>
+  <!-- counterup -->
+  <script src="./assets/js/vendor/jquery.counterup.min.js" type="text/javascript"></script>
+  <!-- charming -->
+  <script src="./assets/js/vendor/charming.min.js" type="text/javascript"></script>
+  <!-- imagesloaded -->
+  <script src="./assets/js/vendor/imagesloaded.pkgd.min.js" type="text/javascript"></script>
+  <!-- BX-Slider -->
+  <script src="./assets/js/vendor/jquery.bxslider.min.js" type="text/javascript"></script>
+  <!-- Sharer -->
+  <script src="./assets/js/vendor/sharer.js" type="text/javascript"></script>
+  <!-- sticky -->
+  <script src="./assets/js/vendor/sticky.min.js" type="text/javascript"></script>
+  <!-- Aos -->
+  <script src="./assets/js/vendor/aos.js" type="text/javascript"></script>
+  <!-- main file -->
+  <script src="./assets/js/main.js" type="text/javascript"></script>
+  <!-- sass -->
+  <script src="./assets/js/pages/sass.js" type="text/javascript"></script>
+  <script src="./snippet/highlight.min.js"></script>
+  <script src="./snippet/go.min.js"></script>
+  <script src="./snippet/javascript.min.js"></script>
+  <script src="./snippet/python.min.js"></script>
+  <script src="./snippet/ruby.min.js"></script>
+  <script src="./snippet/script.js"></script>
+</body>
+
+</html>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script>
+
+
+</script>
+
+`
 
 
 //address page of kyb and it's template
 
-const addressPage = document.createElement('template')
-addressPage.innerHTML = `
+const kycDocumentPage = document.createElement('template')
+kycDocumentPage.innerHTML = `
 <!DOCTYPE html>
 <html lang="en">
 
@@ -180,9 +564,9 @@ addressPage.innerHTML = `
 
 //first page of kyb and it's template
 
-const indexPage = document.createElement('template')
+const agreePage = document.createElement('template')
 
-indexPage.innerHTML =`
+agreePage.innerHTML =`
 <!DOCTYPE html>
 <html lang="en">
 
@@ -336,9 +720,175 @@ indexPage.innerHTML =`
 `
 
 
-const getStartPage = document.createElement('template')
 
-getStartPage.innerHTML=`
+const backPhotoPage = document.createElement('template')
+
+backPhotoPage.innerHTML=`
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Welcome to Verifiedly" />
+  <meta name="keywords"
+    content="Automate and solve your users identity verification" />
+  <meta name="author" content="Verifiedly - Automate and solve your users identity verification" />
+
+  <title>Verifiedly KYC - Back </title>
+  <!-- favicon -->
+
+  <link rel="stylesheet" type="text/css"  href="./assets/css/console.css">
+  <link rel="stylesheet" href="./assets/css/dracula.min.css">
+  <link rel="stylesheet" href="./assets/css/reset.min.css">
+ 
+  <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon" />
+  <!-- Bootstrap 4.5 -->
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css" type="text/css" />
+  <!-- animate -->
+  <link rel="stylesheet" href="./assets/css/animate.css" type="text/css" />
+  <!-- Swiper -->
+  <link rel="stylesheet" href="./assets/css/swiper.min.css" />
+  <!-- icons -->
+  <link rel="stylesheet" href="./assets/css/icons.css" type="text/css" />
+  <!-- aos -->
+  <link rel="stylesheet" href="./assets/css/aos.css" type="text/css" />
+  <!-- main css -->
+  <link rel="stylesheet" href="./assets/css/main.css" type="text/css" />
+  <!-- normalize -->
+  <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
+ 
+</head>
+
+<body class="bg-white  d-flex flex flex-column justify-content-center align-item-center">
+ 
+ 
+
+  <div class="container d-flex justify-content-center align-item-center flex-column">
+    <div class="row d-flex justify-content-center align-item-center flex-column">
+   
+      <div class="col-lg-12 mx-auto my-auto d-flex  flex-column">
+      
+    <div class="row">
+       <div class="col-lg-12 padding-py-1 padding-px-1">
+        <div class="">
+          <form action="" class="row">
+            <div class="col-lg-12 align-items-center justify-content-center text-center">
+
+              <div class="section back_section">
+                <img src="https://res.cloudinary.com/verifiedly/image/upload/v1624408050/back_zhrwme.svg" alt="" class="passport_holder passport_back_holder margin-t-4 margin-b-4">
+                         
+              <div class="rounded-25 text_full margin-t-2 bg-snow padding-px-2 padding-py-1 flex text-center justify-content-center align-items-center">
+                Now take a photo of the back of your photo ID
+              </div>      
+              </div>
+              
+              
+                        </div>
+
+     
+         
+
+       
+            <div class="col-12 d-flex d-md-flex justify-content-between margin-t-4">
+              <a class="btn btn_lg_primary  padding-px-6 padding-py-2 back_to_front bg-snow c-black rounded-12 c-white h-fit-content">
+                Back
+            </a>
+       
+              <a onclick="take_snapshot()" class="btn btn_lg_primary redirect_to_liveness padding-px-6 padding-py-2  bg-blue rounded-12 c-white h-fit-content">
+                Next
+              </a>
+            </div>
+          </form>
+        </div>
+       </div>
+        
+    </div>
+
+
+    <div class="row">
+        <div class="col-12 text-center padding-t-6 mx-auto margin-t-6">
+            Powered by verifiedly <img src="https://res.cloudinary.com/verifiedly/image/upload/v1624041053/verifiedly_logo_ppus4g.svg" class="img_logo" alt="verifiedly logo">
+        </div>
+    </div>
+    <div class="footer padding-py-2 padding-px-2"></div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- jquery -->
+  <script src="../../assets/js/jquery-3.5.0.js" type="text/javascript"></script>
+  <!-- jquery-migrate -->
+  <script src="../../assets/js/jquery-migrate.min.js" type="text/javascript"></script>
+  <!-- popper -->
+  <script src="../../assets/js/popper.min.js" type="text/javascript"></script>
+  <!-- bootstrap -->
+  <script src="../../assets/js/bootstrap.min.js" type="text/javascript"></script>
+  <!--
+  ============
+  vendor file
+  ============
+   -->
+  <!-- particles -->
+  <script src="./assets/js/vendor/particles.min.js" type="text/javascript"></script>
+  <!-- TweenMax -->
+  <script src="./assets/js/vendor/TweenMax.min.js" type="text/javascript"></script>
+  <!-- ScrollMagic -->
+  <script src="./assets/js/vendor/ScrollMagic.js" type="text/javascript"></script>
+  <!-- animation.gsap -->
+  <script src="./assets/js/vendor/animation.gsap.js" type="text/javascript"></script>
+  <!-- addIndicators -->
+  <script src="./assets/js/vendor/debug.addIndicators.min.js" type="text/javascript"></script>
+  <!-- Swiper js -->
+  <script src="./assets/js/vendor/swiper.min.js" type="text/javascript"></script>
+  <!-- countdown -->
+  <script src="./assets/js/vendor/countdown.js" type="text/javascript"></script>
+  <!-- simpleParallax -->
+  <script src="./assets/js/vendor/simpleParallax.min.js" type="text/javascript"></script>
+  <!-- waypoints -->
+  <script src="./assets/js/vendor/waypoints.min.js" type="text/javascript"></script>
+  <!-- counterup -->
+  <script src="./assets/js/vendor/jquery.counterup.min.js" type="text/javascript"></script>
+  <!-- charming -->
+  <script src="./assets/js/vendor/charming.min.js" type="text/javascript"></script>
+  <!-- imagesloaded -->
+  <script src="./assets/js/vendor/imagesloaded.pkgd.min.js" type="text/javascript"></script>
+  <!-- BX-Slider -->
+  <script src="./assets/js/vendor/jquery.bxslider.min.js" type="text/javascript"></script>
+  <!-- Sharer -->
+  <script src="./assets/js/vendor/sharer.js" type="text/javascript"></script>
+  <!-- sticky -->
+  <script src="./assets/js/vendor/sticky.min.js" type="text/javascript"></script>
+  <!-- Aos -->
+  <script src="./assets/js/vendor/aos.js" type="text/javascript"></script>
+  <!-- main file -->
+  <script src="./assets/js/main.js" type="text/javascript"></script>
+  <!-- sass -->
+  <script src="./assets/js/pages/sass.js" type="text/javascript"></script>
+  <script src="./snippet/highlight.min.js"></script>
+  <script src="./snippet/go.min.js"></script>
+  <script src="./snippet/javascript.min.js"></script>
+  <script src="./snippet/python.min.js"></script>
+  <script src="./snippet/ruby.min.js"></script>
+
+</body>
+
+</html>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+
+`
+
+const kycOtpPage = document.createElement('template')
+
+kycOtpPage.innerHTML=`
 
 <!DOCTYPE html>
 <html lang="en">
@@ -722,9 +1272,9 @@ businessPage.innerHTML = `
 
 
 
-const verificationPage = document.createElement('template')
+const kycFrontPage = document.createElement('template')
 
-verificationPage.innerHTML = `
+kycFrontPage.innerHTML = `
 <!DOCTYPE html>
 <html lang="en">
 
@@ -802,7 +1352,7 @@ verificationPage.innerHTML = `
                 Back
             </a>
        
-              <a onclick={take_snapshot()} class="btn btn_lg_primary redirect_btn padding-px-6 padding-py-2  bg-blue rounded-12 c-white h-fit-content">
+              <a class="btn btn_lg_primary redirect_to_btn padding-px-6 padding-py-2  bg-blue rounded-12 c-white h-fit-content">
                 Next
               </a>
             </div>
@@ -1106,11 +1656,14 @@ Verify with Verifiedly
 
 <div class="row">
 <div class="col-lg-11 mx-auto">
-<div class="kyc_objects"></div>
-<div class="kyc_page2"></div>
-<div class="kyc_page3"></div>
-<div class="kyc_page4"></div>
-<div class="kyc_page5"></div>
+<div class="kyc_agree"></div>
+<div class="kyc_otp"></div>
+<div class="kyc_document"></div>
+<div class="kyc_front"></div>
+<div class="kyc_back"></div>
+<div class="kyc_liveness"></div>
+<div class="kyc_address"></div>
+<div class="kyc_finish"></div>
 </div>
 </div>
 
@@ -1210,7 +1763,7 @@ const scriptElement = document.createElement("script");
 scriptElement.src = scriptLink;
 
 class VerifiedlyKYC extends HTMLElement {
-
+   //initializing the web component
     constructor(){
         super();
         this.attachShadow({mode:"open"});
@@ -1235,30 +1788,44 @@ else{
 }
 
           };
-
+   //initialize web component elements and screens 
           render(){
           
         
           
           
            
-            const kycObjects = this.shadowRoot.querySelector(".kyc_objects")
-            kycObjects.appendChild(indexPage.content.cloneNode(true));
-          const kycPage2 = this.shadowRoot.querySelector('.kyc_page2')
-          kycPage2.appendChild(getStartPage.content.cloneNode(true));
-          kycPage2.style.display = 'none'
+            const agreePageStart = this.shadowRoot.querySelector(".kyc_agree")
+            agreePageStart.appendChild(agreePage.content.cloneNode(true));
+          const kycOtp = this.shadowRoot.querySelector('.kyc_otp')
+          kycOtp.appendChild(kycOtpPage.content.cloneNode(true));
+          kycOtp.style.display = 'none'
           
-          const kycPage3 = this.shadowRoot.querySelector('.kyc_page3')
-          kycPage3.appendChild(addressPage.content.cloneNode(true));
-          kycPage3.style.display = 'none'
+          const kycDocument = this.shadowRoot.querySelector('.kyc_document')
+          kycDocument.appendChild(kycDocumentPage.content.cloneNode(true));
+          kycDocument.style.display = 'none'
           
-          const kycPage4 = this.shadowRoot.querySelector('.kyc_page4')
-          kycPage4.appendChild(verificationPage.content.cloneNode(true));
-          kycPage4.style.display = 'none'
+          const kycFront = this.shadowRoot.querySelector('.kyc_front')
+          kycFront.appendChild(kycFrontPage.content.cloneNode(true));
+          kycFront.style.display = 'none'
           
-          const kycPage5 = this.shadowRoot.querySelector('.kyc_page5')
-          kycPage5.appendChild(finishPage.content.cloneNode(true));
-          kycPage5.style.display = 'none'
+          
+          const kycBack = this.shadowRoot.querySelector('.kyc_back')
+          kycBack.appendChild(backPhotoPage.content.cloneNode(true));
+          kycBack.style.display = 'none'
+
+
+          const kycLiveness = this.shadowRoot.querySelector('.kyc_liveness')
+          kycLiveness.appendChild(livenessPage.content.cloneNode(true));
+          kycLiveness.style.display = 'none'
+
+          const kycAddress = this.shadowRoot.querySelector('.kyc_address')
+          kycAddress.appendChild(finalAddressPage.content.cloneNode(true));
+          kycAddress.style.display = 'none'
+
+          const kycFinish = this.shadowRoot.querySelector('.kyc_finish')
+          kycFinish.appendChild(finishPage.content.cloneNode(true));
+          kycFinish.style.display = 'none'
 
 
               // handle onload script element
@@ -1279,12 +1846,20 @@ else{
                     }
         
 
-          getStartedRender(){
+backPhoto(){
+                      const kycFront = this.shadowRoot.querySelector('.kyc_front')
+                      kycFront.style.display = 'none'
+                      const kycBack = this.shadowRoot.querySelector('.kyc_back')
+                    
+                      kycBack.style.display = 'flex'
+
+                    }
+ getStartedRender(){
             
-      const kycObjects = this.shadowRoot.querySelector('.kyc_objects')
-      kycObjects.style.display = 'none'
-      const kycPage2 = this.shadowRoot.querySelector('.kyc_page2')
-      kycPage2.style.display = 'flex'
+      const agreePageStart = this.shadowRoot.querySelector('.kyc_agree')
+      agreePageStart.style.display = 'none'
+      const kycOtp = this.shadowRoot.querySelector('.kyc_otp')
+      kycOtp.style.display = 'flex'
 
          
               
@@ -1297,11 +1872,11 @@ else{
           verificationRender(){
            
      
-          const kycPage3 = this.shadowRoot.querySelector('.kyc_page2')
-          kycPage3.style.display = 'none'
-          const kycPage4 = this.shadowRoot.querySelector('.kyc_page3')
+          const kycOtp = this.shadowRoot.querySelector('.kyc_otp')
+          kycOtp.style.display = 'none'
+          const kycDocument = this.shadowRoot.querySelector('.kyc_document')
         
-          kycPage4.style.display = 'flex'
+          kycDocument.style.display = 'flex'
 
           
           //start of webcamjs
@@ -1311,9 +1886,9 @@ else{
   setTimeout(() => {
     passportHolder.classList.add("hide_photo")
     section.innerHTML = `
-    <div class="col-lg-10 camera_section rounded-0 text-center mx-auto">
+    <div class="col-lg-12 camera_section rounded-0 text-center mx-auto">
   
-  <div class="camera_cover">
+  <div class="camera_cover mx-auto">
     <div class="camera_line"></div>
     <div id="my_camera" class="my_camera">
   
@@ -1342,52 +1917,148 @@ else{
   
           }
 
+
+          
+          backCamVerificationRender(){
+           
+     
+          const kycOtp = this.shadowRoot.querySelector('.kyc_otp')
+          kycOtp.style.display = 'none'
+          const kycDocument = this.shadowRoot.querySelector('.kyc_document')
+        
+          kycDocument.style.display = 'flex'
+
+          
+          //start of webcamjs
+  const back_section = this.shadowRoot.querySelector('.back_section')
+  const passportHolder = this.shadowRoot.querySelector('.passport_back_holder')
+
+    setTimeout(() => {
+      passportHolder.classList.add("hide_photo")
+      back_section.innerHTML = `
+      <div class="col-lg-12 camera_section rounded-0 text-center mx-auto">
+  
+      <div class="camera_cover mx-auto">
+      <div class="camera_line"></div>
+      <div id="my_camera my_back_camera" class="my_camera">
+  
+      
+        
+    </div>
+  
+  </div>
+  <div class="rounded-25 text_full margin-t-2 bg-snow padding-px-1 padding-py-1 flex text-center justify-content-center align-items-center">
+    First we'll take a photo of the front of your photo ID
+  </div>
+  
+  
+  </div>
+    `
+    // const cameraElement = document.createElement("div");
+    // cameraElement.id = "camera_box";
+    // this.shadowRoot.appendChild(cameraElement);
+
+    const cameraElement = this.shadowRoot.querySelector("#my_back_camera")
+    // this.shadowRoot.appendChild(cameraElement);
+
+    Webcam.attach(cameraElement);
+  }, 3000);
+  
+  
+          }
           businessRender(){
 
-            const kycPage2 = this.shadowRoot.querySelector('.kyc_page3')
-            kycPage2.style.display = 'none'
-            const kycPage3 = this.shadowRoot.querySelector('.kyc_page4')
-            kycPage3.style.display = 'flex'
+            const kycDocument = this.shadowRoot.querySelector('.kyc_document')
+            kycDocument.style.display = 'none'
+            const kycFront = this.shadowRoot.querySelector('.kyc_front')
+            kycFront.style.display = 'flex'
           }
 
-          finishRender(){
-            const kycPage3 = this.shadowRoot.querySelector('.kyc_page4')
-            kycPage3.style.display = 'none'
-            const kycPage4 = this.shadowRoot.querySelector('.kyc_page5') 
-            kycPage4.style.display = 'flex'
-          }
+        
+          //go back to kyc documet page from kyc front webcam page
+          backToBisDocument(){
+            const kycFront = this.shadowRoot.querySelector('.kyc_front')
           
-          backToBis(){
-            const kycPage3 = this.shadowRoot.querySelector('.kyc_page4')
-          
-            kycPage3.style.display = 'none'
-            const kycPage2 = this.shadowRoot.querySelector('.kyc_page3')
-            kycPage2.style.display = 'flex'
+            kycFront.style.display = 'none'
+            const kycDocument = this.shadowRoot.querySelector('.kyc_document')
+            kycDocument.style.display = 'flex'
           }
 
           backToStart(){
-            const kycPage3 = this.shadowRoot.querySelector('.kyc_page3')
+            const kycDocument = this.shadowRoot.querySelector('.kyc_document')
           
-            kycPage3.style.display = 'none'
-            const kycPage2 = this.shadowRoot.querySelector('.kyc_page2')
-            kycPage2.style.display = 'flex'
+            kycDocument.style.display = 'none'
+            const kycOtp = this.shadowRoot.querySelector('.kyc_otp')
+            kycOtp.style.display = 'flex'
           }
 
-          focusEvent = (first, last)=>{
-            if(first.value.length){
-                this.shadowRoot.getElementById(last).focus()
-            }
+          backToFront(){
+            const kycLiveness = this.shadowRoot.querySelector('.kyc_liveness')
+            kycLiveness.style.display = 'none'
+            const kycBack = this.shadowRoot.querySelector('.kyc_back')
+            kycBack.style.display = 'flex'
+         
+
+          }
+          toLiveness(){
+
+            const kycBack = this.shadowRoot.querySelector('.kyc_back')
+            kycBack.style.display = 'none'
+            const kycLiveness = this.shadowRoot.querySelector('.kyc_liveness')
+            kycLiveness.style.display = 'flex'
+          }
 
 
-            alert("first")
+          livenessToBack(){
+            const kycLiveness = this.shadowRoot.querySelector('.kyc_liveness')
+            kycLiveness.style.display = 'none'
+            const kycBack = this.shadowRoot.querySelector('.kyc_back')
+            kycBack.style.display = 'flex'
+       
+
+          }
+livenessToAddress(){
+  const kycLiveness = this.shadowRoot.querySelector('.kyc_liveness')
+  kycLiveness.style.display = 'none'
+
+  const kycAddress = this.shadowRoot.querySelector('.kyc_address')
+  kycAddress.style.display = 'flex'
+
+}
+
+
+
+adddressBackToLiveness(){
+
+  const kycAddress = this.shadowRoot.querySelector('.kyc_address')
+  kycAddress.style.display = 'none'
+
+  const kycLiveness = this.shadowRoot.querySelector('.kyc_liveness')
+  kycLiveness.style.display = 'flex'
+}
+addressToFinish(){
+  const kycAddress = this.shadowRoot.querySelector('.kyc_address')
+  kycAddress.style.display = 'none'
+
+  const kycFinish = this.shadowRoot.querySelector('.kyc_finish')
+  kycFinish.style.display = 'flex'
+
+}
+          // focusEvent = (first, last)=>{
+          //   if(first.value.length){
+          //       this.shadowRoot.getElementById(last).focus()
+          //   }
+
+
+          //   alert("first")
             
-            maxLength = otpInput.getAttribute('maxlength');
+          //   maxLength = otpInput.getAttribute('maxlength');
             
-            if (otpInput.value.length > otpInput.maxLength){
-              otpInput.value = otpInput.value.slice(0, otpInput.maxLength)
-            }
+          //   if (otpInput.value.length > otpInput.maxLength){
+          //     otpInput.value = otpInput.value.slice(0, otpInput.maxLength)
+          //   }
             
-            }
+          //   }
         
 
 
@@ -1399,13 +2070,28 @@ else{
     this.shadowRoot.querySelector('.agree_btn').addEventListener('click', () => this.getStartedRender())
     this.shadowRoot.querySelector('.verification_btn').addEventListener('click', () => this.businessRender())
     this.shadowRoot.querySelector('.business_btn').addEventListener('click', () => this.verificationRender())
-    this.shadowRoot.querySelector('.back_to_business_btn').addEventListener('click', () => this.backToBis())
+
+
+    this.shadowRoot.querySelector('.back_to_business_btn').addEventListener('click', () => this.backToBisDocument())
     this.shadowRoot.querySelector('.back_to_start_btn').addEventListener('click', () => this.backToStart())
-    this.shadowRoot.querySelector('#otp').addEventListener('keyup', () => this.focusEvent(first,last))
- 
+    this.shadowRoot.querySelector('.redirect_to_btn').addEventListener('click', () => this.backPhoto())
+    // this.shadowRoot.querySelector('#otp').addEventListener('keyup', () => this.focusEvent(first,last))
+    this.shadowRoot.querySelector('.close_icon_btn').addEventListener('click', () => this.showModal(false)) 
+
+    this.shadowRoot.querySelector('.back_to_front').addEventListener('click', () => this.backToFront())
+    this.shadowRoot.querySelector('.redirect_to_liveness').addEventListener('click', () => this.toLiveness())
+    
+
+this.shadowRoot.querySelector('.liveness_to_back').addEventListener('click', () => this.livenessToBack())
+this.shadowRoot.querySelector('.liveness_to_address').addEventListener('click', () => this.livenessToAddress())
+
+this.shadowRoot.querySelector('.adddress_back_to_liveness').addEventListener('click', () => this.adddressBackToLiveness())
+this.shadowRoot.querySelector('.address_to_finish').addEventListener('click', () => this.addressToFinish())
+
+
 
     // this.shadowRoot.querySelector('.finish_btn').addEventListener('click', () => this.finishRender())
-    this.shadowRoot.querySelector('.close_icon_btn').addEventListener('click', () => this.showModal(false)) 
+   
     const customSelect =  this.shadowRoot.querySelector('.custom-select');
     const otpInput =  this.shadowRoot.querySelector('.otp');
       
