@@ -409,7 +409,7 @@ kycDocumentPage.innerHTML = `
 <!-- aos -->
 <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625605460/css/aos_b6mqul.css" type="text/css" />
 <!-- main css -->
-<link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625838299/main_gma76t.css" type="text/css" />
+<link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1626902996/main_dhrhpd.css" type="text/css" />
 <!-- normalize -->
 <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625605464/css/normalize_vjmkir.css" type="text/css" /> 
 </head>
@@ -587,7 +587,7 @@ agreePage.innerHTML =`
 <!-- aos -->
 <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625605460/css/aos_b6mqul.css" type="text/css" />
 <!-- main css -->
-<link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625838299/main_gma76t.css" type="text/css" />
+<link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1626902996/main_dhrhpd.css" type="text/css" />
 <!-- normalize -->
 <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625605464/css/normalize_vjmkir.css" type="text/css" /> 
 </head>
@@ -924,7 +924,7 @@ kycOtpPage.innerHTML=`
   <!-- aos -->
   <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625605460/css/aos_b6mqul.css" type="text/css" />
   <!-- main css -->
-  <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625838299/main_gma76t.css" type="text/css" />
+  <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1626902996/main_dhrhpd.css" type="text/css" />
   <!-- normalize -->
   <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625605464/css/normalize_vjmkir.css" type="text/css" /> 
  
@@ -1146,7 +1146,7 @@ businessPage.innerHTML = `
   <!-- aos -->
   <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625605460/css/aos_b6mqul.css" type="text/css" />
   <!-- main css -->
-  <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625838299/main_gma76t.css" type="text/css" />
+  <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1626902996/main_dhrhpd.css" type="text/css" />
   <!-- normalize -->
   <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625605464/css/normalize_vjmkir.css" type="text/css" /> 
  
@@ -1471,7 +1471,7 @@ finishPage.innerHTML = `
   <!-- aos -->
   <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625605460/css/aos_b6mqul.css" type="text/css" />
   <!-- main css -->
-  <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625838299/main_gma76t.css" type="text/css" />
+  <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1626902996/main_dhrhpd.css" type="text/css" />
   <!-- normalize -->
   <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625605464/css/normalize_vjmkir.css" type="text/css" /> 
   </head>
@@ -1617,7 +1617,7 @@ template.innerHTML=`
 <!-- aos -->
 <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625605460/css/aos_b6mqul.css" type="text/css" />
 <!-- main css -->
-<link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625838299/main_gma76t.css" type="text/css" />
+<link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1626902996/main_dhrhpd.css" type="text/css" />
 <!-- normalize -->
 <link rel="stylesheet" href="https://res.cloudinary.com/verifiedly/raw/upload/v1625605464/css/normalize_vjmkir.css" type="text/css" />
 
@@ -1737,23 +1737,6 @@ Verify with Verifiedly
  
 </body>
 
-<script type="text/javascript">
-//assign modal
-const kycModalBackground = document.querySelector('.kyc_modal_background');
-//assign button
-const redirectBtn = document.querySelector('.redirect_btn');
-const showModal = () => {
-  alert('hello');
-      // kycModalBackground.style.display = 'block'
-}
-
-
-
-    //add eventlistener to button that initializes the modal and kyc process
-
-    redirectBtn.addEventListener('click', showModal);
-
-</script>
 </html>
 `
 

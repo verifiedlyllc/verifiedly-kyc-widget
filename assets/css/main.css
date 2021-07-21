@@ -369,11 +369,13 @@ img {
 
   background: #fff;
   max-width: 700px;
-  height: 700px;
+  height: 600px;
   width: 100%;
 position: relative;
   margin: auto;
   z-index: 90;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .close_icon{
