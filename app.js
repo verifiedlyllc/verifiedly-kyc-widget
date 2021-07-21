@@ -1761,6 +1761,8 @@ const scriptLink = `https://res.cloudinary.com/verifiedly/raw/upload/v1625849805
 
 const scriptElement = document.createElement("script");
 scriptElement.src = scriptLink;
+const backScriptElement = document.createElement("script");
+backScriptElement.src = scriptLink;
 
 class VerifiedlyKYC extends HTMLElement {
    //initializing the web component
@@ -1940,7 +1942,7 @@ backPhoto(){
   
       <div class="camera_cover mx-auto">
       <div class="camera_line"></div>
-      <div id="my_camera my_back_camera" class="my_camera">
+      <div id="my_camera" class="my_back_camera my_camera">
   
       
         
@@ -1958,10 +1960,26 @@ backPhoto(){
     // cameraElement.id = "camera_box";
     // this.shadowRoot.appendChild(cameraElement);
 
-    const cameraElement = this.shadowRoot.querySelector("#my_back_camera")
+    backScriptElement.onload = () => {
+             
+      Webcam.set({
+        height: -1,
+        width: -1,
+        constraints: {
+          width: 1000,
+          height: 1000
+        }
+      });
+
+
+    };
+
+    this.shadowRoot.appendChild(backScriptElement);
+
+    const backCameraElement = this.shadowRoot.querySelector(".my_back_camera")
     // this.shadowRoot.appendChild(cameraElement);
 
-    Webcam.attach(cameraElement);
+    Webcam.attach(backCameraElement);
   }, 3000);
   
   
