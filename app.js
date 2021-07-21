@@ -55,21 +55,18 @@ livenessPage.innerHTML =`
    
       <div class="col-lg-12 mx-auto my-auto d-flex  flex-column">
       
-          <div class="row">
-            <div class="col-lg-12">
-      
-              <h6 class="c-gray">In order to verify your identity, take a photo of yourself in a bright background and upload</h6 >
-            </div>
-          </div>
+          
     <div class="row">
        <div class="col-lg-12 padding-py-1 padding-px-1">
         <div class="">
+        
+        <h6 class="c-gray  margin-b-2 margin-t-1">In order to verify your identity, take a photo of yourself in a bright background and upload</h6 >
           <form action="" class="row">
 
             <div class="col-lg-12 align-items-center justify-content-center text-center">
 
-              <div class="section">
-                <img src="https://res.cloudinary.com/verifiedly/image/upload/v1624489930/liveness_glkttf.svg" alt="" class="passport_holder margin-t-4 margin-b-2">
+              <div class="section liveness_section">
+                <img src="https://res.cloudinary.com/verifiedly/image/upload/v1624489930/liveness_glkttf.svg" alt="" class="live_passport_holder margin-t-4 margin-b-2">
                          
               <div class="rounded-25 text_full margin-t-1 bg-snow padding-px-1 padding-py-1 flex text-center justify-content-center align-items-center">
                 Now, take a photo of yourself
@@ -226,19 +223,10 @@ finalAddressPage.innerHTML =`
   <div class="row d-flex justify-content-center align-item-center">
     <div class="col-lg-12">
       <div class="bg-white ">
-        <div class="row">
-          <div class="container">
-         <div class="row">
-             <div class="form_cc_four">
-              
-                    <h4>Provide your address</h4>
-        
-             </div>
-         </div>
-          </div>
-          </div>
+    
     <div class="row">
         <div class="form_cc_four">
+        <h4 class="margin-b-2 margin-t-1">Provide your address</h4>
             <form action="" class="row">
               <div class="col-md-12">
                 <div class="form-group">
@@ -424,6 +412,8 @@ kycDocumentPage.innerHTML = `
     <div class="row">
        <div class="col-lg-12 padding-py-3 padding-px-3">
         <div class="">
+        <h6 class="c-gray margin-t-2 margin-b-2">Your document helps us prove your identity. It should match the information you have provided in the 
+        previous steps.</h6 >
           <form action="" class="row">
             <div class="col-md-12 padding-px-1">
               <input type="radio" class="custom_check" value="driver" name="document" id="driver" >
@@ -778,7 +768,9 @@ backPhotoPage.innerHTML=`
     <div class="row">
        <div class="col-lg-12 padding-py-1 padding-px-1">
         <div class="">
+        <h6 class="c-gray margin-b-2 margin-t-1">Take a picture of your govt issued passport.</h6 >
           <form action="" class="row">
+          
             <div class="col-lg-12 align-items-center justify-content-center text-center">
 
               <div class="section back_section">
@@ -801,7 +793,7 @@ backPhotoPage.innerHTML=`
                 Back
             </a>
        
-              <a onclick="take_snapshot()" class="btn btn_lg_primary redirect_to_liveness padding-px-6 padding-py-2  bg-blue rounded-12 c-white h-fit-content">
+              <a class="btn btn_lg_primary redirect_to_liveness padding-px-6 padding-py-2  bg-blue rounded-12 c-white h-fit-content">
                 Next
               </a>
             </div>
@@ -933,12 +925,13 @@ kycOtpPage.innerHTML=`
 <body class="bg-white flex flex-column d-flex justify-content-center align-item-center">
  
 
-  <div class="container h-100vh d-flex justify-content-center align-item-center flex-column">
-    <div class="row h-100vh d-flex justify-content-center align-item-center flex-column">
+  <div class="container d-flex justify-content-center align-item-center flex-column">
+    <div class="row d-flex justify-content-center align-item-center flex-column">
    
       <div class="col-lg-12 mx-auto my-auto d-flex  flex-column">
       <div class="row">
       <div class="form_cc_four">
+      <h4 class="margin-t-2 margin-b-2">Kindly fill in all details</h4>
           <form action="" class="row">
             
             <div class="col-md-12">
@@ -1328,6 +1321,7 @@ kycFrontPage.innerHTML = `
     <div class="row">
        <div class="col-lg-12 padding-py-1 padding-px-1">
         <div class="">
+        <h6 class="c-gray margin-b-2 margin-t-1">Take a picture of your govt issued passport.</h6 >
           <form action="" class="row">
 
             <div class="col-lg-12 align-items-center justify-content-center text-center">
@@ -1626,7 +1620,7 @@ template.innerHTML=`
 
 
 
-<body class="bg-snow  h-100vh  d-flex position-relative  flex flex-column justify-content-center align-item-center">
+<body class="bg-snow  d-flex position-relative  flex flex-column justify-content-center align-item-center">
 
 
 <div class="container">
@@ -1746,6 +1740,8 @@ const scriptElement = document.createElement("script");
 scriptElement.src = scriptLink;
 const backScriptElement = document.createElement("script");
 backScriptElement.src = scriptLink;
+const livenessScriptElement = document.createElement("script");
+livenessScriptElement.src = scriptLink;
 
 class VerifiedlyKYC extends HTMLElement {
    //initializing the web component
@@ -1813,107 +1809,18 @@ else{
           kycFinish.style.display = 'none'
 
 
-              // handle onload script element
-              scriptElement.onload = () => {
-             
-               Webcam.set({
-                 height: -1,
-                 width: -1,
-                 constraints: {
-                   width: 1000,
-                   height: 1000
-                 }
-               });
-         
-     
-             };
-             this.shadowRoot.appendChild(scriptElement);
+              
                     }
         
 
-backPhoto(){
+              backPhoto(){
                       const kycFront = this.shadowRoot.querySelector('.kyc_front')
                       kycFront.style.display = 'none'
                       const kycBack = this.shadowRoot.querySelector('.kyc_back')
                     
                       kycBack.style.display = 'flex'
 
-                    }
- getStartedRender(){
-            
-      const agreePageStart = this.shadowRoot.querySelector('.kyc_agree')
-      agreePageStart.style.display = 'none'
-      const kycOtp = this.shadowRoot.querySelector('.kyc_otp')
-      kycOtp.style.display = 'flex'
-
-         
-              
-                  
-
-          }
-
-
-
-          verificationRender(){
-           
-     
-          const kycOtp = this.shadowRoot.querySelector('.kyc_otp')
-          kycOtp.style.display = 'none'
-          const kycDocument = this.shadowRoot.querySelector('.kyc_document')
-        
-          kycDocument.style.display = 'flex'
-
-          
-          //start of webcamjs
-  const section = this.shadowRoot.querySelector('.section')
-  const passportHolder = this.shadowRoot.querySelector('.passport_holder')
-
-  setTimeout(() => {
-    passportHolder.classList.add("hide_photo")
-    section.innerHTML = `
-    <div class="col-lg-12 camera_section rounded-0 text-center mx-auto">
-  
-  <div class="camera_cover mx-auto">
-    <div class="camera_line"></div>
-    <div id="my_camera" class="my_camera">
-  
-      
-        
-    </div>
-  
-  </div>
-  <div class="rounded-25 text_full margin-t-2 bg-snow padding-px-1 padding-py-1 flex text-center justify-content-center align-items-center">
-    First we'll take a photo of the front of your photo ID
-  </div>
-  
-  
-  </div>
-    `
-    // const cameraElement = document.createElement("div");
-    // cameraElement.id = "camera_box";
-    // this.shadowRoot.appendChild(cameraElement);
-
-    const cameraElement = this.shadowRoot.querySelector("#my_camera")
-    // this.shadowRoot.appendChild(cameraElement);
-
-    Webcam.attach(cameraElement);
-  }, 3000);
-  
-  
-          }
-
-
-          
-          backCamVerificationRender(){
-           
-     
-          const kycOtp = this.shadowRoot.querySelector('.kyc_otp')
-          kycOtp.style.display = 'none'
-          const kycDocument = this.shadowRoot.querySelector('.kyc_document')
-        
-          kycDocument.style.display = 'flex'
-
-          
+                        
           //start of webcamjs
   const back_section = this.shadowRoot.querySelector('.back_section')
   const passportHolder = this.shadowRoot.querySelector('.passport_back_holder')
@@ -1933,7 +1840,7 @@ backPhoto(){
   
   </div>
   <div class="rounded-25 text_full margin-t-2 bg-snow padding-px-1 padding-py-1 flex text-center justify-content-center align-items-center">
-    First we'll take a photo of the front of your photo ID
+  Now take a photo of the back of your photo ID
   </div>
   
   
@@ -1966,13 +1873,115 @@ backPhoto(){
   }, 3000);
   
   
+
+
+                    }
+ getStartedRender(){
+            
+      const agreePageStart = this.shadowRoot.querySelector('.kyc_agree')
+      agreePageStart.style.display = 'none'
+      const kycOtp = this.shadowRoot.querySelector('.kyc_otp')
+      kycOtp.style.display = 'flex'
+
+         
+              
+                  
+
           }
+
+
+
+          verificationRender(){
+           
+     
+          const kycOtp = this.shadowRoot.querySelector('.kyc_otp')
+          kycOtp.style.display = 'none'
+          const kycDocument = this.shadowRoot.querySelector('.kyc_document')
+        
+          kycDocument.style.display = 'flex'
+
+          
+  
+          }
+
+
+          
+          backCamVerificationRender(){
+           
+     
+          const kycOtp = this.shadowRoot.querySelector('.kyc_otp')
+          kycOtp.style.display = 'none'
+          const kycDocument = this.shadowRoot.querySelector('.kyc_document')
+        
+          kycDocument.style.display = 'flex'
+
+      
+          }
+
+
+          //front camera render button
           businessRender(){
 
             const kycDocument = this.shadowRoot.querySelector('.kyc_document')
             kycDocument.style.display = 'none'
             const kycFront = this.shadowRoot.querySelector('.kyc_front')
             kycFront.style.display = 'flex'
+
+
+
+              //start of webcamjs
+              const section = this.shadowRoot.querySelector('.section')
+              const passportHolder = this.shadowRoot.querySelector('.passport_holder')
+            // handle onload script element
+            scriptElement.onload = () => {
+                         
+              Webcam.set({
+                height: -1,
+                width: -1,
+                constraints: {
+                  width: 1000,
+                  height: 1000
+                }
+              });
+            
+            
+            };
+            this.shadowRoot.appendChild(scriptElement);
+              setTimeout(() => {
+                
+                passportHolder.classList.add("hide_photo")
+                section.innerHTML = `
+                <div class="col-lg-12 camera_section rounded-0 text-center mx-auto">
+              
+              <div class="camera_cover mx-auto">
+                <div class="camera_line"></div>
+                <div id="my_camera" class="my_camera">
+              
+                  
+                    
+                </div>
+              
+              </div>
+              <div class="rounded-25 text_full margin-t-2 bg-snow padding-px-1 padding-py-1 flex text-center justify-content-center align-items-center">
+                First we'll take a photo of the front of your photo ID
+              </div>
+              
+              
+              </div>
+                `
+                // const cameraElement = document.createElement("div");
+                // cameraElement.id = "camera_box";
+                // this.shadowRoot.appendChild(cameraElement);
+            
+                const cameraElement = this.shadowRoot.querySelector("#my_camera")
+                // this.shadowRoot.appendChild(cameraElement);
+            
+                Webcam.attach(cameraElement);
+              }, 3000);
+              
+            
+
+
           }
 
         
@@ -1994,10 +2003,11 @@ backPhoto(){
           }
 
           backToFront(){
-            const kycLiveness = this.shadowRoot.querySelector('.kyc_liveness')
-            kycLiveness.style.display = 'none'
             const kycBack = this.shadowRoot.querySelector('.kyc_back')
-            kycBack.style.display = 'flex'
+            kycBack.style.display = 'none'
+            const kycFront = this.shadowRoot.querySelector('.kyc_front')
+            kycFront.style.display = 'flex'
+         
          
 
           }
@@ -2007,6 +2017,64 @@ backPhoto(){
             kycBack.style.display = 'none'
             const kycLiveness = this.shadowRoot.querySelector('.kyc_liveness')
             kycLiveness.style.display = 'flex'
+
+
+                                
+          //start of webcamjs
+  const back_section = this.shadowRoot.querySelector('.liveness_section')
+  const passportHolder = this.shadowRoot.querySelector('.live_passport_holder')
+
+    setTimeout(() => {
+      passportHolder.classList.add("hide_photo")
+      back_section.innerHTML = `
+      <div class="col-lg-12 live_camera_section rounded-0 text-center mx-auto">
+
+      <div class="live_camera_cover mx-auto">
+        <div class="live_camera_line"></div>
+        <div id="my_camera" class="live_my_camera">
+      
+          
+            
+        </div>
+      
+      </div>
+      <div class="rounded-25 text_full margin-t-2 bg-snow padding-px-1 padding-py-1 flex text-center justify-content-center align-items-center">
+        Now, take a photo of yourself
+      </div>
+      
+      
+      </div>
+    `
+    // const cameraElement = document.createElement("div");
+    // cameraElement.id = "camera_box";
+    // this.shadowRoot.appendChild(cameraElement);
+
+    livenessScriptElement.onload = () => {
+             
+      Webcam.set({
+        height: -1,
+        width: -1,
+        constraints: {
+          width: 1000,
+          height: 1000
+        }
+      });
+
+
+    };
+
+    this.shadowRoot.appendChild(livenessScriptElement);
+
+    const liveCameraElement = this.shadowRoot.querySelector(".live_my_camera")
+    // this.shadowRoot.appendChild(cameraElement);
+
+    Webcam.attach(liveCameraElement);
+  }, 3000);
+  
+  
+
+
+    
           }
 
 
