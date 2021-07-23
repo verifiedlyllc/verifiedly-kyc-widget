@@ -7,7 +7,6 @@
 // Licensed under the MIT License
 
 
-alert("hello this is webcamjs")
 (function(window) {
 var _userMedia;
 
@@ -581,7 +580,7 @@ var Webcam = {
 			}
 
 			// default error handler if no custom one specified
-			alert("Webcam.js Error: " + message);
+			// alert("Webcam.js Error: " + message);
 		}
 		
 		return false; // no hook defined

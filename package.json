@@ -1,0 +1,20 @@
+{
+  "name": "verifiedly-kyc-widget",
+  "version": "1.0.0",
+  "description": "<!-- headings -->\r ## Getting started",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/verifiedlyllc/verifiedly-kyc-widget.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/verifiedlyllc/verifiedly-kyc-widget/issues"
+  },
+  "homepage": "https://github.com/verifiedlyllc/verifiedly-kyc-widget#readme"
+}

@@ -967,25 +967,26 @@ kycOtpPage.innerHTML=`
              <div class="row d-flex flex-row otp_section padding-px-1">
                <div class="col_otp">
                  <div class="form-group">
-                  <input id="otp" type="number" maxlength="1" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" onkeyup={this.focusEvent(this, 'sec')} class="form-control otp" >
+                  <input id="otp" type="number" maxlength="1" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control otp_start otp" onkeyup="focusEvent(this, 'sec')"  >
               
                  </div>
                </div>
                <div class="col_otp">
                 <div class="form-group">
-                 <input id="sec" maxlength="1" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" onkeyup="focusEvent(this, 'thir')" type="number"  class="form-control otp" >
+                 <input id="sec" maxlength="1" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" onkeyup="javascript: if(this.value.length){this.shadowRoot.querySelector('.thir_otp').focus()} maxLength = this.getAttribute('maxlength'); if (this.value.length > this.maxLength){this.value = this.value.slice(0, this.maxLength)}" 
+                type="number"  class="form-control sec_otp otp" >
              
                 </div>
               </div>
               <div class="col_otp">
                 <div class="form-group">
-                 <input id="thir" maxlength="1" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" onkeyup="focusEvent(this, 'fourh')" type="number" class="form-control otp" >
+                 <input id="thir" maxlength="1" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" onkeyup="javascript: if(this.value.length){this.shadowRoot.querySelector('.fourh_otp').focus()} maxLength = this.getAttribute('maxlength'); if (this.value.length > this.maxLength){this.value = this.value.slice(0, this.maxLength)}" type="number" class="form-control thir_otp otp" >
              
                 </div>
               </div>
               <div class="col_otp">
                 <div class="form-group">
-                 <input id="fourh" type="number" maxlength="1"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control otp" >
+                 <input id="fourh" type="number" maxlength="1"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control fourh_otp otp" >
              
                 </div>
               </div>
@@ -1734,7 +1735,7 @@ Verify with Verifiedly
 </html>
 `
 
-const scriptLink = `https://res.cloudinary.com/verifiedly/raw/upload/v1625849805/webcam_u5dmbv.js`;
+const scriptLink = `https://res.cloudinary.com/verifiedly/raw/upload/v1626965779/webcam_vhx1t1.js`;
 
 const scriptElement = document.createElement("script");
 scriptElement.src = scriptLink;
@@ -1814,65 +1815,74 @@ else{
         
 
               backPhoto(){
-                      const kycFront = this.shadowRoot.querySelector('.kyc_front')
-                      kycFront.style.display = 'none'
-                      const kycBack = this.shadowRoot.querySelector('.kyc_back')
-                    
-                      kycBack.style.display = 'flex'
 
-                        
-          //start of webcamjs
-  const back_section = this.shadowRoot.querySelector('.back_section')
-  const passportHolder = this.shadowRoot.querySelector('.passport_back_holder')
+                Webcam.snap( function(data_uri) {
+     
+                  this.shadowRoot.querySelector("#my_camera").innerHTML = '<img src="'+data_uri+'"/>';
+            
+                
+                } );
+                const kycFront = this.shadowRoot.querySelector('.kyc_front')
+                kycFront.style.display = 'none'
+                const kycBack = this.shadowRoot.querySelector('.kyc_back')
+              
+                kycBack.style.display = 'flex'
 
-    setTimeout(() => {
-      passportHolder.classList.add("hide_photo")
-      back_section.innerHTML = `
-      <div class="col-lg-12 camera_section rounded-0 text-center mx-auto">
+                  
+    //start of webcamjs
+const back_section = this.shadowRoot.querySelector('.back_section')
+const passportHolder = this.shadowRoot.querySelector('.passport_back_holder')
+
+setTimeout(() => {
+passportHolder.classList.add("hide_photo")
+back_section.innerHTML = `
+<div class="col-lg-12 camera_section rounded-0 text-center mx-auto">
+
+<div class="camera_cover mx-auto">
+<div class="camera_line"></div>
+<div id="my_camera" class="my_back_camera my_camera">
+
+
   
-      <div class="camera_cover mx-auto">
-      <div class="camera_line"></div>
-      <div id="my_camera" class="my_back_camera my_camera">
-  
-      
-        
-    </div>
-  
-  </div>
-  <div class="rounded-25 text_full margin-t-2 bg-snow padding-px-1 padding-py-1 flex text-center justify-content-center align-items-center">
-  Now take a photo of the back of your photo ID
-  </div>
-  
-  
-  </div>
-    `
-    // const cameraElement = document.createElement("div");
-    // cameraElement.id = "camera_box";
-    // this.shadowRoot.appendChild(cameraElement);
+</div>
 
-    backScriptElement.onload = () => {
-             
-      Webcam.set({
-        height: -1,
-        width: -1,
-        constraints: {
-          width: 1000,
-          height: 1000
-        }
-      });
+</div>
+<div class="rounded-25 text_full margin-t-2 bg-snow padding-px-1 padding-py-1 flex text-center justify-content-center align-items-center">
+Now take a photo of the back of your photo ID
+</div>
 
 
-    };
+</div>
+`
+// const cameraElement = document.createElement("div");
+// cameraElement.id = "camera_box";
+// this.shadowRoot.appendChild(cameraElement);
 
-    this.shadowRoot.appendChild(backScriptElement);
+backScriptElement.onload = () => {
+       
+Webcam.set({
+  height: -1,
+  width: -1,
+  constraints: {
+    width: 1000,
+    height: 1000
+  }
+});
 
-    const backCameraElement = this.shadowRoot.querySelector(".my_back_camera")
-    // this.shadowRoot.appendChild(cameraElement);
 
-    Webcam.attach(backCameraElement);
-  }, 3000);
-  
-  
+};
+
+this.shadowRoot.appendChild(backScriptElement);
+
+const backCameraElement = this.shadowRoot.querySelector(".my_back_camera")
+// this.shadowRoot.appendChild(cameraElement);
+
+Webcam.attach(backCameraElement);
+}, 3000);
+
+
+
+
 
 
                     }
@@ -2013,6 +2023,14 @@ else{
           }
           toLiveness(){
 
+
+            Webcam.snap( function(data_uri) {
+     
+              this.shadowRoot.querySelector('..my_back_camera').innerHTML = '<img src="'+data_uri+'"/>';
+             
+  
+         
+            } );
             const kycBack = this.shadowRoot.querySelector('.kyc_back')
             kycBack.style.display = 'none'
             const kycLiveness = this.shadowRoot.querySelector('.kyc_liveness')
@@ -2073,7 +2091,6 @@ else{
   
   
 
-
     
           }
 
@@ -2087,12 +2104,20 @@ else{
 
           }
 livenessToAddress(){
+
+  Webcam.snap( function(data_uri) {
+     
+    this.shadowRoot.querySelector(".live_my_camera").innerHTML = '<img src="'+data_uri+'"/>';
+
+  
+  } );
+
+  
   const kycLiveness = this.shadowRoot.querySelector('.kyc_liveness')
   kycLiveness.style.display = 'none'
 
   const kycAddress = this.shadowRoot.querySelector('.kyc_address')
   kycAddress.style.display = 'flex'
-
 }
 
 
@@ -2113,23 +2138,19 @@ addressToFinish(){
   kycFinish.style.display = 'flex'
 
 }
-          // focusEvent = (first, last)=>{
-          //   if(first.value.length){
-          //       this.shadowRoot.getElementById(last).focus()
-          //   }
-
-
-          //   alert("first")
-            
-          //   maxLength = otpInput.getAttribute('maxlength');
-            
-          //   if (otpInput.value.length > otpInput.maxLength){
-          //     otpInput.value = otpInput.value.slice(0, otpInput.maxLength)
-          //   }
-            
-          //   }
-        
-
+       
+ focusEvent = (first, last)=>{
+  if(first.value.length){
+    this.shadowRoot.getElementById(last).focus()
+  }
+  
+  maxLength = this.getAttribute('maxlength');
+  
+  if (this.value.length > this.maxLength){
+    this.value = this.value.slice(0, this.maxLength)
+  }
+  
+  }
 
           connectedCallback () {
         
@@ -2144,7 +2165,7 @@ addressToFinish(){
     this.shadowRoot.querySelector('.back_to_business_btn').addEventListener('click', () => this.backToBisDocument())
     this.shadowRoot.querySelector('.back_to_start_btn').addEventListener('click', () => this.backToStart())
     this.shadowRoot.querySelector('.redirect_to_btn').addEventListener('click', () => this.backPhoto())
-    // this.shadowRoot.querySelector('#otp').addEventListener('keyup', () => this.focusEvent(first,last))
+    this.shadowRoot.querySelector('.otp_start').addEventListener('keyup', () => this.focusEvent())
     this.shadowRoot.querySelector('.close_icon_btn').addEventListener('click', () => this.showModal(false)) 
 
     this.shadowRoot.querySelector('.back_to_front').addEventListener('click', () => this.backToFront())
@@ -2198,14 +2219,7 @@ this.shadowRoot.querySelector('.address_to_finish').addEventListener('click', ()
 
 
 
-  function take_snapshot() {
-    Webcam.snap( function(data_uri) {
-     
-      document.getElementById('my_camera').innerHTML = '<img src="'+data_uri+'"/>';
 
-      location.assign("/back.html")
-    } );
-  };
   
 
 
