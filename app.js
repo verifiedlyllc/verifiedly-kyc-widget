@@ -1,6 +1,9 @@
 
 //liveness page 
 
+
+
+
 const livenessPage = document.createElement('template')
 
 
@@ -967,26 +970,25 @@ kycOtpPage.innerHTML=`
              <div class="row d-flex flex-row otp_section padding-px-1">
                <div class="col_otp">
                  <div class="form-group">
-                  <input id="otp" type="number" maxlength="1" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control otp_start otp" onkeyup="focusEvent(this, 'sec')"  >
+                  <input id="otp" type="number" maxlength="1"  class="form-control otp_start otp"  >
               
                  </div>
                </div>
                <div class="col_otp">
                 <div class="form-group">
-                 <input id="sec" maxlength="1" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" onkeyup="javascript: if(this.value.length){this.shadowRoot.querySelector('.thir_otp').focus()} maxLength = this.getAttribute('maxlength'); if (this.value.length > this.maxLength){this.value = this.value.slice(0, this.maxLength)}" 
-                type="number"  class="form-control sec_otp otp" >
+                 <input id="sec" maxlength="1"  type="number"  class="form-control sec_otp otp" >
              
                 </div>
               </div>
               <div class="col_otp">
                 <div class="form-group">
-                 <input id="thir" maxlength="1" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" onkeyup="javascript: if(this.value.length){this.shadowRoot.querySelector('.fourh_otp').focus()} maxLength = this.getAttribute('maxlength'); if (this.value.length > this.maxLength){this.value = this.value.slice(0, this.maxLength)}" type="number" class="form-control thir_otp otp" >
+                 <input id="thir" maxlength="1" class="form-control thir_otp otp" >
              
                 </div>
               </div>
               <div class="col_otp">
                 <div class="form-group">
-                 <input id="fourh" type="number" maxlength="1"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control fourh_otp otp" >
+                 <input id="fourh" type="number" maxlength="1" class="form-control fourh_otp otp" >
              
                 </div>
               </div>
@@ -1735,6 +1737,7 @@ Verify with Verifiedly
 </html>
 `
 
+const allInputElement = [];
 const scriptLink = `https://res.cloudinary.com/verifiedly/raw/upload/v1626965779/webcam_vhx1t1.js`;
 
 const scriptElement = document.createElement("script");
@@ -1772,10 +1775,7 @@ else{
           };
    //initialize web component elements and screens 
           render(){
-          
-        
-          
-          
+
            
             const agreePageStart = this.shadowRoot.querySelector(".kyc_agree")
             agreePageStart.appendChild(agreePage.content.cloneNode(true));
@@ -1810,9 +1810,60 @@ else{
           kycFinish.style.display = 'none'
 
 
+
+          //otp render buttons
+
+           // Render button element
+
+    allInputElement.push(this.shadowRoot.querySelector(".otp_start"));
+    allInputElement.push(this.shadowRoot.querySelector(".sec_otp"));
+    allInputElement.push(this.shadowRoot.querySelector(".thir_otp"));
+    allInputElement.push(this.shadowRoot.querySelector(".fourh_otp"));
+  
+    for (let index = 0; index < allInputElement.length; index++) {
+      const element = allInputElement[index];
+      element.addEventListener(
+        "input",
+        (e) => {
+          const element = allInputElement[index];
+          const nextElement = allInputElement[index + 1];
+          const allValues = element.value.slice(0, 4);
+
+          if (allValues.length > 1) {
+            allInputElement[allValues.length - 1].focus();
+          } else {
+            nextElement.focus();
+          }
+
+          this.onInput(index);
+        },
+        true
+      );
+    }
+
+    allInputElement[0].focus();
+
               
                     }
         
+
+                    //oninput
+                    onInput(index) {
+                      const element = allInputElement[index];
+                      const nextElement = allInputElement[index + 1];
+                  
+                      const allValues = element.value.slice(0, 4); // 123456789
+                  
+                      if (allValues.length > element.maxLength) {
+                        element.value = element.value.slice(0, element.maxLength);
+                        if (nextElement) {
+                          nextElement.value = allValues.substring(1);
+                          if (nextElement.value.length > 0) {
+                            this.onInput(index + 1);
+                          }
+                        }
+                      }
+                    }
 
               backPhoto(){
 
@@ -2139,18 +2190,8 @@ addressToFinish(){
 
 }
        
- focusEvent = (first, last)=>{
-  if(first.value.length){
-    this.shadowRoot.getElementById(last).focus()
-  }
-  
-  maxLength = this.getAttribute('maxlength');
-  
-  if (this.value.length > this.maxLength){
-    this.value = this.value.slice(0, this.maxLength)
-  }
-  
-  }
+
+
 
           connectedCallback () {
         
@@ -2165,7 +2206,7 @@ addressToFinish(){
     this.shadowRoot.querySelector('.back_to_business_btn').addEventListener('click', () => this.backToBisDocument())
     this.shadowRoot.querySelector('.back_to_start_btn').addEventListener('click', () => this.backToStart())
     this.shadowRoot.querySelector('.redirect_to_btn').addEventListener('click', () => this.backPhoto())
-    this.shadowRoot.querySelector('.otp_start').addEventListener('keyup', () => this.focusEvent())
+
     this.shadowRoot.querySelector('.close_icon_btn').addEventListener('click', () => this.showModal(false)) 
 
     this.shadowRoot.querySelector('.back_to_front').addEventListener('click', () => this.backToFront())
