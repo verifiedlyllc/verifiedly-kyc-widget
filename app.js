@@ -1811,9 +1811,12 @@ else{
 
 
 
+        
+
           //otp render buttons
 
            // Render button element
+           
 
     allInputElement.push(this.shadowRoot.querySelector(".otp_start"));
     allInputElement.push(this.shadowRoot.querySelector(".sec_otp"));
@@ -1867,12 +1870,13 @@ else{
 
               backPhoto(){
 
-                Webcam.snap( function(data_uri) {
+                // Webcam.snap( function(data_uri) {
      
-                  this.shadowRoot.querySelector("#my_camera").innerHTML = '<img src="'+data_uri+'"/>';
+                //   this.shadowRoot.querySelector(".my_camera").innerHTML = '<img src="'+data_uri+'"/>';
             
                 
-                } );
+                // } );
+
                 const kycFront = this.shadowRoot.querySelector('.kyc_front')
                 kycFront.style.display = 'none'
                 const kycBack = this.shadowRoot.querySelector('.kyc_back')
@@ -2075,13 +2079,13 @@ Webcam.attach(backCameraElement);
           toLiveness(){
 
 
-            Webcam.snap( function(data_uri) {
+            // Webcam.snap( function(data_uri) {
      
-              this.shadowRoot.querySelector('..my_back_camera').innerHTML = '<img src="'+data_uri+'"/>';
+            //   this.shadowRoot.querySelector('.my_back_camera').innerHTML = '<img src="'+data_uri+'"/>';
              
   
          
-            } );
+            // } );
             const kycBack = this.shadowRoot.querySelector('.kyc_back')
             kycBack.style.display = 'none'
             const kycLiveness = this.shadowRoot.querySelector('.kyc_liveness')
@@ -2156,12 +2160,12 @@ Webcam.attach(backCameraElement);
           }
 livenessToAddress(){
 
-  Webcam.snap( function(data_uri) {
+  // Webcam.snap( function(data_uri) {
      
-    this.shadowRoot.querySelector(".live_my_camera").innerHTML = '<img src="'+data_uri+'"/>';
+  //   this.shadowRoot.querySelector(".live_my_camera").innerHTML = '<img src="'+data_uri+'"/>';
 
   
-  } );
+  // } );
 
   
   const kycLiveness = this.shadowRoot.querySelector('.kyc_liveness')
